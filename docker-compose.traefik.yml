@@ -9,11 +9,14 @@ networks:
 
 volumes:
     prometheus:
-      driver: storageos
+      driver_opts:
+        type: "storageos"
     grafana:
-      driver: storageos
+      driver_opts:
+        type: "storageos"
     alertmanager:
-      driver: storageos
+      driver_opts:
+        type: "storageos"
 
 configs:
   dockerd_config:
