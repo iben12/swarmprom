@@ -83,6 +83,7 @@ services:
       #- GF_SMTP_USER=${GF_SMTP_USER}
       #- GF_SMTP_PASSWORD=${GF_SMTP_PASSWORD}
       - GF_INSTALL_PLUGINS=raintank-worldping-app
+      - GF_EXTERNAL_IMAGE_STORAGE_PROVIDER=gcs
       - GF_EXTERNAL_IMAGE_STORAGE_KEY_FILE=/opt/gcskey.json
       - GF_EXTERNAL_IMAGE_STORAGE_BUCKET_NAME=skizoid-swarm
       - GF_EXTERNAL_IMAGE_STORAGE_PATH=grafana
@@ -102,7 +103,7 @@ services:
           - node.role == manager
       resources:
         limits:
-          memory: 300M
+          memory: 500M
         reservations:
           memory: 64M
       labels:
