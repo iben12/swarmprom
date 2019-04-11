@@ -11,12 +11,15 @@ volumes:
     prometheus:
       driver_opts:
         type: "storageos"
+        device: ./
     grafana:
       driver_opts:
         type: "storageos"
+        device: ./
     alertmanager:
       driver_opts:
         type: "storageos"
+        device: ./
 
 configs:
   dockerd_config:
