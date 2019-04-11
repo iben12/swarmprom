@@ -8,9 +8,15 @@ networks:
     external: true
 
 volumes:
-    prometheus: {}
-    grafana: {}
-    alertmanager: {}
+    prometheus:
+      external:
+        name: prometheus
+    grafana:
+      external:
+        name: grafana
+    alertmanager:
+      external:
+        name: alertmanager
 
 configs:
   dockerd_config:
