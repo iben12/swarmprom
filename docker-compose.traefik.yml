@@ -4,7 +4,7 @@ networks:
   net:
     driver: overlay
     attachable: true
-  traefik-public:
+  gateway:
     external: true
 
 volumes:
@@ -90,7 +90,7 @@ services:
         - traefik.enable=true
         - traefik.port=3000
         - traefik.tags=${TRAEFIK_PUBLIC_TAG:-traefik-public}
-        - traefik.docker.network=traefik-public
+        - traefik.docker.network=gateway
         # Traefik service that listens to HTTP
         - traefik.redirectorservice.frontend.entryPoints=http
         - traefik.redirectorservice.frontend.redirect.entryPoint=https
@@ -130,7 +130,7 @@ services:
         - traefik.enable=true
         - traefik.port=9093
         - traefik.tags=${TRAEFIK_PUBLIC_TAG:-traefik-public}
-        - traefik.docker.network=traefik-public
+        - traefik.docker.network=gateway
         # Traefik service that listens to HTTP
         - traefik.redirectorservice.frontend.entryPoints=http
         - traefik.redirectorservice.frontend.redirect.entryPoint=https
@@ -156,7 +156,7 @@ services:
         - traefik.enable=true
         - traefik.port=8080
         - traefik.tags=${TRAEFIK_PUBLIC_TAG:-traefik-public}
-        - traefik.docker.network=traefik-public
+        - traefik.docker.network=gateway
         # Traefik service that listens to HTTP
         - traefik.redirectorservice.frontend.entryPoints=http
         - traefik.redirectorservice.frontend.redirect.entryPoint=https
@@ -224,7 +224,7 @@ services:
         - traefik.enable=true
         - traefik.port=9090
         - traefik.tags=${TRAEFIK_PUBLIC_TAG:-traefik-public}
-        - traefik.docker.network=traefik-public
+        - traefik.docker.network=gateway
         # Traefik service that listens to HTTP
         - traefik.redirectorservice.frontend.entryPoints=http
         - traefik.redirectorservice.frontend.redirect.entryPoint=https
