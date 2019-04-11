@@ -8,9 +8,7 @@ networks:
     external: true
 
 volumes:
-    prometheus:
-      external:
-        name: prometheus
+    prometheus: {}
     grafana:
       external:
         name: grafana
