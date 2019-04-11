@@ -99,7 +99,7 @@ services:
     networks:
       - default
       - net
-      - traefik-public
+      - gateway
 
   alertmanager:
     image: stefanprodan/swarmprom-alertmanager:v0.14.0
@@ -140,7 +140,7 @@ services:
     networks:
       - default
       - net
-      - traefik-public
+      - gateway
 
   unsee:
     image: cloudflare/unsee:v0.8.0
@@ -166,7 +166,7 @@ services:
     networks:
       - default
       - net
-      - traefik-public
+      - gateway
 
   node-exporter:
     image: stefanprodan/swarmprom-node-exporter:v0.16.0
@@ -234,4 +234,4 @@ services:
     networks:
       - default
       - net
-      - traefik-public
+      - gateway
