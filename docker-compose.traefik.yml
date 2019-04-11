@@ -8,13 +8,12 @@ networks:
     external: true
 
 volumes:
-    prometheus: {}
+    prometheus:
+      driver: storageos
     grafana:
-      external:
-        name: grafana
+      driver: storageos
     alertmanager:
-      external:
-        name: alertmanager
+      driver: storageos
 
 configs:
   dockerd_config:
