@@ -9,17 +9,14 @@ networks:
 
 volumes:
     prometheus:
-      # driver_opts:
-      #   type: "storageos"
-      #   device: ":/"
+      external:
+        name: prometheus
     grafana:
-      # driver_opts:
-      #   type: "storageos"
-      #   device: "/"
+      external:
+        name: grafana
     alertmanager:
-      # driver_opts:
-      #   type: "storageos"
-      #   device: "./"
+      external:
+        name: alertmanager
 
 configs:
   dockerd_config:
