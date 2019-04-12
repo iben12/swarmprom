@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-cat /etc/prometheus/prometheus.yml > /tmp/prometheus.yml
+cat /etc/prometheus/prometheus_mod.yml > /tmp/prometheus.yml
 cat /etc/prometheus/weave-cortex.yml | \
     sed "s@#password: <token>#@password: '$WEAVE_TOKEN'@g" > /tmp/weave-cortex.yml
 
