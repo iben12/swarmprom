@@ -234,7 +234,7 @@ services:
       - source: task_rules
         target: /etc/prometheus/swarm_task.rules.yml
       - source: prometheus
-        target: /etc/prometheus/prometheus.yml
+        target: /etc/prometheus/prometheus_mod.yml
         mode: 0444
     deploy:
       mode: replicated
