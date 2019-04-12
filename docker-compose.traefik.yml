@@ -120,7 +120,6 @@ services:
         # Traefik service that listens to HTTPS
         - traefik.webservice.frontend.entryPoints=https
     networks:
-      - service
       - default
       - net
       - gateway
@@ -259,3 +258,4 @@ services:
       - default
       - net
       - gateway
+      - service
