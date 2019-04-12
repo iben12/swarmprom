@@ -20,6 +20,10 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9090']
 
+  - job_name: 'storageos'
+    static_configs:
+      - targets: ['storageos:5705']
+
   - job_name: 'dockerd-exporter'
     dns_sd_configs:
     - names:
