@@ -6,6 +6,8 @@ networks:
     attachable: true
   gateway:
     external: true
+  service:
+    external: true
 
 volumes:
     prometheus:
