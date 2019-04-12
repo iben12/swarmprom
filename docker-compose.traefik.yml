@@ -29,7 +29,7 @@ configs:
     file: ./prometheus/rules/swarm_task.rules.yml
   prometheus:
     file: ./prometheus/conf/prometheus.yml
-  prometheus_entripoint:
+  prometheus_entrypoint:
     file: ./prometheus/conf/docker-entrypoint.sh
 
 secrets:
@@ -238,7 +238,7 @@ services:
       - source: prometheus
         target: /etc/prometheus/prometheus_mod.yml
         mode: 0444
-      - source: prometheus-entrypoint
+      - source: prometheus_entrypoint
         target: /etc/prometheus/docker-entrypoint.sh
         mode: 0555
     deploy:
